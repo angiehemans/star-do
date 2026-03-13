@@ -1,0 +1,112 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 150ms ease;
+}
+
+.item:hover {
+  background: var(--color-surface-hover);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.checked .name {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.checkbox[data-state="checked"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.indicator {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  max-width: 32px;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.checked .iconWrapper {
+  opacity: 0.4;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: color 150ms ease;
+}
+
+.detail {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.checked .detail {
+  text-decoration: line-through;
+}
+
+.wikiLink {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: opacity 150ms ease, color 150ms ease;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.item:hover .wikiLink {
+  opacity: 1;
+}
+
+.wikiLink:hover {
+  color: var(--color-primary);
+}

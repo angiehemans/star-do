@@ -1,0 +1,55 @@
+import { Category } from "@/types";
+
+const noteItems: { name: string; sub: string; detail?: string }[] = [
+  // Secret Notes
+  { name: "Secret Note #1", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Abigail" },
+  { name: "Secret Note #2", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Sebastian, Penny, Vincent, Jodi, Kent, and Sam" },
+  { name: "Secret Note #3", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Leah" },
+  { name: "Secret Note #4", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Maru" },
+  { name: "Secret Note #5", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Jas, Vincent, George, Evelyn & Pam" },
+  { name: "Secret Note #6", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Lewis, Marnie, Demetrius, and Caroline" },
+  { name: "Secret Note #7", sub: "Secret Notes", detail: "Descriptions of 'older bachelors': Harvey, Elliot, and Shane" },
+  { name: "Secret Note #8", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Haley and Emily" },
+  { name: "Secret Note #9", sub: "Secret Notes", detail: "Lists \"Loved\" gifts for Alex" },
+  { name: "Secret Note #10", sub: "Secret Notes", detail: "Cryptic note about Skull Cavern (available only after completing Qi's Challenge)" },
+  { name: "Secret Note #11", sub: "Secret Notes", detail: "Old picture of (presumably) Marnie and Jas" },
+  { name: "Secret Note #12", sub: "Secret Notes", detail: "List of items commonly found in various garbage cans around town" },
+  { name: "Secret Note #13", sub: "Secret Notes", detail: "12 o'clock noon SHARP. Last day of the season. Check bush above playground" },
+  { name: "Secret Note #14", sub: "Secret Notes", detail: "I hid something behind the Community Center" },
+  { name: "Secret Note #15", sub: "Secret Notes", detail: "Mermaid Show: 1-5-4-2-3" },
+  { name: "Secret Note #16", sub: "Secret Notes", detail: "Picture of an X by the Railroad" },
+  { name: "Secret Note #17", sub: "Secret Notes", detail: "Picture of an X on Northeast side of town" },
+  { name: "Secret Note #18", sub: "Secret Notes", detail: "Picture of an X on Southeast side of the Desert" },
+  { name: "Secret Note #19", sub: "Secret Notes", detail: "Picture of 1 Willow Lane (Sam's House) with a series of arrows" },
+  { name: "Secret Note #20", sub: "Secret Notes", detail: "Picture of the Town Square with a series of arrows" },
+  { name: "Secret Note #21", sub: "Secret Notes", detail: "Picture of a clock and the moon near the bridge in Town" },
+  { name: "Secret Note #22", sub: "Secret Notes", detail: "Cryptic note from Mr. Qi" },
+  { name: "Secret Note #23", sub: "Secret Notes", detail: "If yoo can reed dis... come to seecrit wuds. Pleez bring may-pal serrup" },
+  { name: "Secret Note #24", sub: "Secret Notes", detail: "Page from M. Jasper's book about Junimo Huts" },
+  { name: "Secret Note #25", sub: "Secret Notes", detail: "I \"borrowed\" a necklace from Mom, but lost it somewhere near the bath house" },
+  // Journal Scraps
+  { name: "Journal Scrap #1", sub: "Journal Scraps", detail: "Description of things the Island has to offer" },
+  { name: "Journal Scrap #2", sub: "Journal Scraps", detail: "Notes the location of the Stingray, and that Golden Walnuts are used as currency for the Parrots" },
+  { name: "Journal Scrap #3", sub: "Journal Scraps", detail: "Note to keep an eye out for anything unusual, as it will likely lead to a Golden Walnut" },
+  { name: "Journal Scrap #4", sub: "Journal Scraps", detail: "Depicts an area just north of Birdie's Hut" },
+  { name: "Journal Scrap #5", sub: "Journal Scraps", detail: "Descriptions of the Island Volcano" },
+  { name: "Journal Scrap #6", sub: "Journal Scraps", detail: "Depicts an area southeast of the Island Farmhouse" },
+  { name: "Journal Scrap #7", sub: "Journal Scraps", detail: "Details which gems are for which upgrades in the Volcano Caldera" },
+  { name: "Journal Scrap #8", sub: "Journal Scraps", detail: "Details what the various Weapon and Tool Enchantments do" },
+  { name: "Journal Scrap #9", sub: "Journal Scraps", detail: "Tells about the Mermaid that appears in Island East on rainy days and the corresponding puzzle" },
+  { name: "Journal Scrap #10", sub: "Journal Scraps", detail: "Depicts an area just south of the mouth of the Volcano" },
+  { name: "Journal Scrap #11", sub: "Journal Scraps", detail: "Hints that you can merge two rings in the Volcano Caldera" },
+];
+
+export const notes: Category = {
+  id: "notes",
+  name: "Secret Notes & Journal Scraps",
+  description: "Find all Secret Notes and Journal Scraps",
+  icon: "/images/special-powers/magnifying-glass.png",
+  items: noteItems.map((n, i) => ({
+    id: `note-${i}`,
+    name: n.name,
+    subcategory: n.sub,
+    ...(n.detail && { detail: n.detail }),
+  })),
+};
