@@ -1,9 +1,21 @@
+.progressRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .progressRow {
+    grid-template-columns: 1fr;
+  }
+}
+
 .overall {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.25rem;
-  margin-bottom: 1.5rem;
 }
 
 .overallLabel {
@@ -13,6 +25,94 @@
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+/* Perfection breakdown */
+.perfectionDetails {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.perfectionSummary {
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.perfectionSummary:hover {
+  color: var(--color-primary);
+}
+
+.perfectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.25rem 1.5rem;
+  padding: 0 1.25rem 0.75rem;
+}
+
+.perfectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+}
+
+.perfectionLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.perfectionValue {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.perfectionChecks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.perfectionCheck {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.perfectionCheckbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.perfectionCheckbox[data-state="checked"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.perfectionIndicator {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid {
