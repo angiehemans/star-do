@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   overflow-y: auto;
+  z-index: 100;
 }
 
 .logoRow {
@@ -78,4 +79,51 @@
   height: 20px;
   flex-shrink: 0;
   image-rendering: pixelated;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 110;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  line-height: 0;
+}
+
+/* Overlay */
+.overlay {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 250ms ease;
+    box-shadow: none;
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 90;
+  }
 }
